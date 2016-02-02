@@ -30,4 +30,4 @@ If incorrect player loses 1 gold coin + Animation
 
 The first person to answer five questions correctly is the winner. This means they have five gold coins. 
 
-Button appears asking players if they would like 
+Button appears asking players if they would like to play again. 
