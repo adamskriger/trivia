@@ -7,7 +7,7 @@
 
 body {
 
-  background-image: url("http://allwonmedia.com/wp-content/uploads/2015/05/white-room-background_web1.jpg");
+  background-image: url("http://www.studio-camera-lucida.com/wp-content/uploads/2013/12/spotlight_Background_101.jpg");
   background-repeat: no-repeat;
 
 }
@@ -47,8 +47,18 @@ box-sizing: border-box;
 }
 
 
+#player1Score {
 
+  height: auto;
+  width:  auto;
+}
 
+#player2Score {
+
+  height: auto;
+  width:  auto;
+
+}
 
 #answerContainer {
   color: white;
