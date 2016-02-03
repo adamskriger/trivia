@@ -4,11 +4,13 @@ $( document ).ready(function() {
 
 
 
-  function Question(question, answer) {
+  function Question(question, answer, incorrectAnswer1, incorrectAnswer2) {
 
   this.question = question;
   this.answer = answer;
   this.played = false;
+  this.incorrectAnswer1 = incorrectAnswer1
+  this.incorrectAnswer2 = incorrectAnswer2
 
 
   this.display = function(){
@@ -30,15 +32,27 @@ $( document ).ready(function() {
 
   //creates instances of questions
 
-  var question1 = new Question('What is a question?','That was question');
-  var question2 = new Question('What is a dog?','That was a dog');
-  var question3 = new Question('What is a cat?','That was a cat');
-  var question4 = new Question('What is a horse?','That was a horse');
-  var question5 = new Question('What is a monkey?','That was a monkey');
+  var question1 = new Question('What is a question?','That was question', 'incorrectAnswer1', 'incorrectAnswer2');
+  var question2 = new Question('What is a dog?','That was a dog', 'incorrectAnswer1', 'incorrectAnswer2');
+  var question3 = new Question('What is a cat?','That was a cat', 'incorrectAnswer1', 'incorrectAnswer2');
+  var question4 = new Question('What is a horse?','That was a horse', 'incorrectAnswer1', 'incorrectAnswer2');
+  var question5 = new Question('What is a monkey?','That was a monkey', 'incorrectAnswer1', 'incorrectAnswer2');
 
 
+//create constructor function to create player objects
 
-  // function person(first, last, age, eye) {
+function Person(firstName) {
+    this.firstName = firstName;
+    this.myTurn = false;
+    this.score = 0;
+
+}
+
+//create instances of people who will be playing
+  var player1 = new Person();
+  var player2 = new Person();
+
+  // function Person(first, last, age, eye) {
   //     this.firstName = first;
   //     this.lastName = last;
   //     this.age = age;
@@ -61,8 +75,30 @@ $( document ).ready(function() {
     $('#questionContainer').html(ArrayOfQuestions[i].question);
     $('#answerContainer').html(ArrayOfQuestions[i].answer);
   }
+
+
+
+
+
+
 });
 
+//The following function shuffles the answer choices and places them in an array:
+function incorrectAnswersShuffler(question, answer, incorrectAnswer1, incorrectAnswer2) {
+  var incorrectAnswersArray = [answer, incorrectAnswer1, incorrectAnswer2];
+  console.log(incorrectAnswersArray);
+  shuffle(incorrectAnswersArray);
+  console.log(incorrectAnswersArray);
+  //now we have to place the shuffled answers into the divs that contain the mc answer choices:
+  $('#choice1').html(incorrectAnswersArray[0]);
+  $('#choice2').html(incorrectAnswersArray[1]);
+  $('#choice3').html(incorrectAnswersArray[2]);
+
+
+
+}
+
+incorrectAnswersShuffler(question1, question1.answer, question1.incorrectAnswer1, question1.incorrectAnswer2);
 
 
 
