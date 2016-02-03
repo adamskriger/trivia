@@ -1,0 +1,86 @@
+* {
+  border-color: black;
+  border-width: 1px;
+  border-style: dotted;
+
+}
+
+body {
+
+  background-image: url("http://www.studio-camera-lucida.com/wp-content/uploads/2013/12/spotlight_Background_101.jpg");
+  background-repeat: no-repeat;
+
+}
+
+#container {
+position: relative;
+width: 100%;
+max-width: 960px;
+margin: 0 auto;
+padding: 0 20px;
+box-sizing: border-box;
+
+}
+
+#headline {
+  text-align: center;
+  margin: auto;
+  color: #98dafc;
+
+}
+
+#gameBoard {
+  text-align: center;
+  margin: auto;
+  background-color: #89bdd3;
+  width: 900px;
+  height: 500px;
+}
+
+
+#questionContainer {
+  background-color: #9ad3de
+  color: black;
+  text-align: center;
+  height: 150px;
+
+}
+
+
+#player1Score {
+
+  height: auto;
+  width:  auto;
+}
+
+#player2Score {
+
+  height: auto;
+  width:  auto;
+
+}
+
+#answerContainer {
+  color: white;
+  background-color: #e3e3e3;
+  height: 150px;
+
+}
+
+
+#askQuestionButton {
+  height:50px;
+  width: 150px;
+  padding:5px;
+  background-color: white;
+  color: #89bdd3;
+  text-decoration:none;
+  margin: auto;
+}
+
+.multipleChoice {
+
+  width : 250px;
+  height : 120px;
+  display: inline-block;
+}
