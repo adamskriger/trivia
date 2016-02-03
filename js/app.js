@@ -23,7 +23,7 @@ $( document ).ready(function() {
   }
 
 
-//shuffle based on fisher-yeats algori:
+//The shuffle function is based on Fisher-Yates algorithm. Thanks F-Y!
 
   shuffle = function(o){
 	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -60,6 +60,16 @@ function Person(firstName) {
   // }
 
 
+//Assign player turn
+var counter = 0;
+if (counter % 2 === 0) {
+  player1.myTurn = true;
+} else if ( counter % 2 !== 0) {
+  player2.myTurn = true;
+}
+
+
+
   //this puts the question into the div with id questionContainer
   // $( "#askQuestionButton" ).click(function() {
   //   console.log( "Handler for .click() called." );
@@ -70,6 +80,9 @@ function Person(firstName) {
 
   $( "#askQuestionButton" ).on( "click", function() {
     console.log("Ask Question Button pressed");
+    console.log("This is the counter before it has been augmented: " + counter);
+    counter++;
+    console.log("This is the counter after it has been augmented: " + counter)
     shuffle(ArrayOfQuestions);
     for (var i=0; i < ArrayOfQuestions.length; i++) {
     $('#questionContainer').html(ArrayOfQuestions[i].question);
@@ -96,7 +109,7 @@ function Person(firstName) {
 }
 
 
-
+//end of event handler click on ask question button
 });
 
 
