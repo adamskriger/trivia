@@ -74,31 +74,31 @@ function Person(firstName) {
     for (var i=0; i < ArrayOfQuestions.length; i++) {
     $('#questionContainer').html(ArrayOfQuestions[i].question);
     $('#answerContainer').html(ArrayOfQuestions[i].answer);
-  }
+
+
+  //The following function shuffles the answer choices and places them in an array:
+  function incorrectAnswersShuffler(question, answer, incorrectAnswer1, incorrectAnswer2) {
+    var incorrectAnswersArray = [answer, incorrectAnswer1, incorrectAnswer2];
+    console.log(incorrectAnswersArray);
+    shuffle(incorrectAnswersArray);
+    console.log(incorrectAnswersArray);
+    //now we have to place the shuffled answers into the divs that contain the mc answer choices:
+    $('#choice1').html(incorrectAnswersArray[0]);
+    $('#choice2').html(incorrectAnswersArray[1]);
+    $('#choice3').html(incorrectAnswersArray[2]);
+
+}
 
 
 
+  incorrectAnswersShuffler(ArrayOfQuestions[i].question, ArrayOfQuestions[i].answer, ArrayOfQuestions[i].incorrectAnswer1, ArrayOfQuestions[i].incorrectAnswer2);
+
+}
 
 
 
 });
 
-//The following function shuffles the answer choices and places them in an array:
-function incorrectAnswersShuffler(question, answer, incorrectAnswer1, incorrectAnswer2) {
-  var incorrectAnswersArray = [answer, incorrectAnswer1, incorrectAnswer2];
-  console.log(incorrectAnswersArray);
-  shuffle(incorrectAnswersArray);
-  console.log(incorrectAnswersArray);
-  //now we have to place the shuffled answers into the divs that contain the mc answer choices:
-  $('#choice1').html(incorrectAnswersArray[0]);
-  $('#choice2').html(incorrectAnswersArray[1]);
-  $('#choice3').html(incorrectAnswersArray[2]);
-
-
-
-}
-
-incorrectAnswersShuffler(question1, question1.answer, question1.incorrectAnswer1, question1.incorrectAnswer2);
 
 
 
