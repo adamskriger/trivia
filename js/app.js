@@ -1,6 +1,8 @@
 $( document ).ready(function() {
   console.log("ready!")
 
+  $("#answerContainer").hide();
+
 var counter = 2;
 var player1Score = 0;
 var player2Score = 0;
@@ -33,11 +35,11 @@ shuffle = function(o){
 
 //creates instances of questions
 
-var question1 = new Question('What is a question?','That was question', 'incorrectAnswer1', 'incorrectAnswer2');
-var question2 = new Question('What is a dog?','That was a dog', 'incorrectAnswer1', 'incorrectAnswer2');
-var question3 = new Question('What is a cat?','That was a cat', 'incorrectAnswer1', 'incorrectAnswer2');
-var question4 = new Question('What is a horse?','That was a horse', 'incorrectAnswer1', 'incorrectAnswer2');
-var question5 = new Question('What is a monkey?','That was a monkey', 'incorrectAnswer1', 'incorrectAnswer2');
+var question1 = new Question('How old was Steve Jobs when he founded Apple Computer?','20 years old', '25 years old', '32 years old');
+var question2 = new Question('How long did it take for Facebook to turn a profit?','5 years', '3 years', 'FB is still not profitable');
+var question3 = new Question('In what city was General Assembly founded?','New York City', 'San Francisco', 'Chicago');
+var question4 = new Question('How many active monthy users does Instragram have?','300 million', '150,000', 'Who uses Instagram?');
+var question5 = new Question('What does I.P.O. stand for?','Initial Public Offering', 'Internet Pursuing Others', 'Instant Price Offering');
 
 
 //create constructor function to create player objects
@@ -101,6 +103,8 @@ setPlayerTurn();
     shuffle(ArrayOfQuestions);
     for (var i=0; i < ArrayOfQuestions.length; i++) {
     $('#questionContainer').html(ArrayOfQuestions[i].question);
+    $("#answerContainer").hide();
+
     $('#answerContainer').html(ArrayOfQuestions[i].answer);
 
 
@@ -151,11 +155,13 @@ $("#choice1").on("click", function() {
 
   }
   // setPlayerTurn();
-
+  $("#answerContainer").show();
   //Display scores:
   $('#player1Score').html("Player 1 Score: " + player1Score);
   $('#player2Score').html("Player 2 Score: " + player2Score);
   displayCurrentPlayer();
+
+
 
 });
 
@@ -185,7 +191,7 @@ $("#choice2").on("click", function() {
 
   }
   // setPlayerTurn();
-
+  $("#answerContainer").show();
   //Display scores:
   $('#player1Score').html("Player 1 Score: " + player1Score);
   $('#player2Score').html("Player 2 Score: " + player2Score);
@@ -219,7 +225,7 @@ $("#choice3").on("click", function() {
 
   }
   // setPlayerTurn();
-
+  $("#answerContainer").show();
   //Display scores:
   $('#player1Score').html("Player 1 Score: " + player1Score);
   $('#player2Score').html("Player 2 Score: " + player2Score);
