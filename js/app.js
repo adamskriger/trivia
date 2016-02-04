@@ -98,7 +98,6 @@ setPlayerTurn();
 
 
 
-  //this puts the question into the div with id questionContainer
   // $( "#askQuestionButton" ).click(function() {
   //   console.log( "Handler for .click() called." );
   // });
@@ -109,10 +108,21 @@ setPlayerTurn();
   $( "#askQuestionButton" ).on( "click", function() {
     shuffle(ArrayOfQuestions);
     for (var i=0; i < ArrayOfQuestions.length; i++) {
-    $('#questionContainer').html(ArrayOfQuestions[i].question);
+    $('#questionContainer').html(ArrayOfQuestions[i].question); //this puts the question into the div with id questionContainer
+
     $("#answerContainer").hide();
 
     $('#answerContainer').html(ArrayOfQuestions[i].answer);
+
+
+
+    //if player score decrements by one, move back one space in the array.
+    //if player score increments by one, move forward two spaces in the array
+    //if player score < 5, draw from easy difficulty array
+    // if player score > 5, draw from medoium difficulty array
+    // if player score >10 draw from hard difficulty array 
+
+
 
 
   //The following function shuffles the answer choices and places them in an array:
@@ -443,7 +453,7 @@ displayCurrentPlayer();
 /////////////////////////////SandBox////////////////////////////////////
 
 
-var easyQuestions = []; 
+var easyQuestions = [];
 
 var mediumQuestions = [];
 
