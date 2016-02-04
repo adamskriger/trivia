@@ -295,16 +295,19 @@ box-sizing: border-box;
 
 #winStatePlayer1 {
 
-  height: 300px;
-  width: 600px;
+  height: 265px;
+  width: 396px;
 
   position: absolute;
   top: 180px;
-  left:360px;
+  left:420px;
   border: 1px solid gold;
   border-radius: 25px;
   font-size: 46px;
   background-color:#ffffff;
+  background-image: url("https://s3.amazonaws.com/keyme-blog/2015/05/05_success.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
 
 
 }

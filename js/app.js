@@ -129,16 +129,14 @@ setPlayerTurn();
 
 }
 
+$("#multipleChoiceAnswers").show();
+
 
 //end of event handler click on ask question button
 });
 
 //Clicking on #choice 1
-
 $("#choice1").on("click", function() {
-
-
-
 
   console.log(player1.myTurn);
   console.log(player2.myTurn);
@@ -147,6 +145,8 @@ $("#choice1").on("click", function() {
     player1Score++;
     counter++;
     setPlayerTurn();
+    $("#answerContainer").show();
+
     console.log("This is player1Score " + player1Score);
     console.log("This is player2Score " + player2Score);
     console.log("This is player1 myturn: " + player1.myTurn);
@@ -157,6 +157,8 @@ $("#choice1").on("click", function() {
     player2Score++;
     counter++;
     setPlayerTurn();
+    $("#answerContainer").show();
+
     console.log("This is player1 score: " + player1Score);
     console.log("This is player2 score: " + player2Score);
     console.log("This is player2 myturn: " + player2.myTurn);
@@ -169,13 +171,16 @@ $("#choice1").on("click", function() {
 
     counter++;
     setPlayerTurn();
+    $("#answerContainer").show();
+
   }
 
   else if ($('#choice1').html() !== $('#answerContainer').html() && player1.myTurn === true)
   {
-    choiceId = window.setInterval(shake,200);
     counter++;
     setPlayerTurn();
+    $("#answerContainer").show();
+
   }
  //end of code that increments the counter when a wrong answer choice is clicked upon:
 
@@ -185,6 +190,8 @@ $("#choice1").on("click", function() {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 1 Wins");
     $('#winStatePlayer1').show();
+    hideAll();
+
 
   }
 
@@ -192,13 +199,16 @@ $("#choice1").on("click", function() {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 2 Wins");
     $('#winStatePlayer1').show();
+    hideAll();
+
 
   }
 
   //end win states//
 
   // setPlayerTurn();
-  $("#answerContainer").show();
+  // $("#answerContainer").show();
+  $("#multipleChoiceAnswers").hide();
   //Display scores:
   $('#player1Score').html("Player 1 Score: " + player1Score);
   $('#player2Score').html("Player 2 Score: " + player2Score);
@@ -217,6 +227,8 @@ $("#choice2").on("click", function() {
     player1Score++;
     counter++;
     setPlayerTurn();
+    $("#answerContainer").show();
+
     console.log("This is player1Score " + player1Score);
     console.log("This is player2Score " + player2Score);
     console.log("This is player1 myturn: " + player1.myTurn);
@@ -227,6 +239,8 @@ $("#choice2").on("click", function() {
     player2Score++;
     counter++;
     setPlayerTurn();
+    $("#answerContainer").show();
+
     console.log("This is player1 score: " + player1Score);
     console.log("This is player2 score: " + player2Score);
     console.log("This is player2 myturn: " + player2.myTurn);
@@ -239,12 +253,16 @@ $("#choice2").on("click", function() {
     {
       counter++;
       setPlayerTurn();
+      $("#answerContainer").show();
+
     }
 
     else if ($('#choice2').html() !== $('#answerContainer').html() && player1.myTurn === true)
     {
       counter++;
       setPlayerTurn();
+      $("#answerContainer").show();
+
     }
    //end of code that increments the counter when a wrong answer choice is clicked upon:
 
@@ -253,6 +271,8 @@ $("#choice2").on("click", function() {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 1 Wins");
     $('#winStatePlayer1').show();
+    hideAll();
+
 
   }
 
@@ -260,13 +280,18 @@ $("#choice2").on("click", function() {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 2 Wins");
     $('#winStatePlayer1').show();
+    hideAll();
+
+
 
   }
 
   //end win states//
 
   // setPlayerTurn();
-  $("#answerContainer").show();
+  // $("#answerContainer").show();
+  $("#multipleChoiceAnswers").hide();
+
   //Display scores:
   $('#player1Score').html("Player 1 Score: " + player1Score);
   $('#player2Score').html("Player 2 Score: " + player2Score);
@@ -283,6 +308,8 @@ $("#choice3").on("click", function() {
     player1Score++;
     counter++;
     setPlayerTurn();
+    $("#answerContainer").show();
+
     console.log("This is player1Score " + player1Score);
     console.log("This is player2Score " + player2Score);
     console.log("This is player1 myturn: " + player1.myTurn);
@@ -293,6 +320,8 @@ $("#choice3").on("click", function() {
     player2Score++;
     counter++;
     setPlayerTurn();
+    $("#answerContainer").show();
+
     console.log("This is player1 score: " + player1Score);
     console.log("This is player2 score: " + player2Score);
     console.log("This is player2 myturn: " + player2.myTurn);
@@ -305,12 +334,16 @@ $("#choice3").on("click", function() {
     {
       counter++;
       setPlayerTurn();
+      $("#answerContainer").show();
+
     }
 
     else if ($('#choice1').html() !== $('#answerContainer').html() && player1.myTurn === true)
     {
       counter++;
       setPlayerTurn();
+      $("#answerContainer").show();
+
     }
    //end of code that increments the counter when a wrong answer choice is clicked upon:
 
@@ -321,6 +354,8 @@ $("#choice3").on("click", function() {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 1 Wins");
     $('#winStatePlayer1').show();
+    hideAll();
+
 
   }
 
@@ -328,13 +363,17 @@ $("#choice3").on("click", function() {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 2 Wins");
     $('#winStatePlayer1').show();
+    hideAll();
+
 
   }
 
   //end win states//
 
   // setPlayerTurn();
-  $("#answerContainer").show();
+  // $("#answerContainer").show();
+  $("#multipleChoiceAnswers").hide();
+
   //Display scores:
   $('#player1Score').html("Player 1 Score: " + player1Score);
   $('#player2Score').html("Player 2 Score: " + player2Score);
@@ -356,6 +395,18 @@ if (player2.myTurn === true) {
 
 console.log(currentPlayer)
 $('#currentPlayer').html("Current Player: " + currentPlayer);
+
+}
+
+function hideAll(){
+  $("#playerScores").hide();
+  $("#questionContainer").hide();
+  $("#askQuestionButton").hide();
+  $("#talkShowHost").hide();
+  $("#answerContainerContainer").hide();
+  $("#answerContainer").hide();
+
+
 
 }
 
