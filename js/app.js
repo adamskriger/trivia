@@ -5,6 +5,7 @@ $( document ).ready(function() {
 //These are hidden divs that appear only when called
   $("#answerContainer").hide();
   $("#winStatePlayer1").hide();
+  $("#reset").hide();
 
 
 var counter = 3;
@@ -330,7 +331,7 @@ $("#choice3").on("click", function() {
   }
 
   //this is the code that increments the counter when a wrong answer choice is clicked upon:
-    else if ($('#choice1').html() !== $('#answerContainer').html() && player2.myTurn === true)
+    else if ($('#choice3').html() !== $('#answerContainer').html() && player2.myTurn === true)
     {
       counter++;
       setPlayerTurn();
@@ -338,7 +339,7 @@ $("#choice3").on("click", function() {
 
     }
 
-    else if ($('#choice1').html() !== $('#answerContainer').html() && player1.myTurn === true)
+    else if ($('#choice3').html() !== $('#answerContainer').html() && player1.myTurn === true)
     {
       counter++;
       setPlayerTurn();
@@ -405,11 +406,37 @@ function hideAll(){
   $("#talkShowHost").hide();
   $("#answerContainerContainer").hide();
   $("#answerContainer").hide();
-
-
+  $("#reset").show();
 
 }
 
+
+
+$("#resetButton").on("click", function(){
+
+  reset();
+
+})
+
+
+function reset() {
+  player1Score = 0;
+  player2Score = 0;
+  counter = 3;
+  $('#player1Score').html("Player 1 Score: " + player1Score);
+  $('#player2Score').html("Player 2 Score: " + player2Score);
+
+  $('#winStatePlayer1').hide();
+  $("#playerScores").show();
+  $("#questionContainer").show();
+  $("#askQuestionButton").show();
+  $("#talkShowHost").show();
+  $("#reset").hide();
+  $("#resetButton").hide();
+
+displayCurrentPlayer();
+
+}
 
   //end of document.ready function//
 });

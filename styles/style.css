@@ -317,3 +317,22 @@ box-sizing: border-box;
     height: 100px;
     background: #ccc;
   }
+
+#reset {
+  position:absolute;
+  height: 100px;
+  width: 200px;
+  left: 515px;
+  top:450px;
+  z-index: 1;
+}
+
+#resetButton{
+  height:50px;
+  width: 150px;
+  padding:5px;
+  background-color: white;
+  color: #89bdd3;
+  text-decoration:none;
+  margin: auto;
+}
