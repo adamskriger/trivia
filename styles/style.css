@@ -13,6 +13,15 @@ body {
 
 }
 
+
+#h1 {
+
+  font-size: 66px;
+
+}
+
+
+
 #talkShowHost {
 
 position: absolute;
@@ -37,6 +46,7 @@ box-sizing: border-box;
   text-align: center;
   margin: auto;
   color: #98dafc;
+  font-size: 26px;
 
 }
 
@@ -48,7 +58,7 @@ box-sizing: border-box;
   width: 900px;
   height: 500px;
 }
-
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #playerScores {
   position: absolute;
   left:80px;
@@ -77,6 +87,7 @@ box-sizing: border-box;
 
 }
 
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #questionContainer {
   position: absolute;
   left:420px;
@@ -109,11 +120,12 @@ box-sizing: border-box;
 
 
 
-#withinQuestionContainer {
+/*#withinQuestionContainer {
   height:400px;
-  padding-top: 50px;
-}
+  padding-top: 40px;
+}*/
 
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #player1Score {
   font-size: 20px;
 
@@ -142,6 +154,7 @@ box-sizing: border-box;
 	text-shadow:0px 1px 0px #ffffff;
 }
 
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #player2Score {
   font-size: 20px;
   height: 35px;
@@ -170,10 +183,11 @@ box-sizing: border-box;
 
 }
 
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #answerContainer {
   position: absolute;
-  top: 450px;
-  left:375px;
+  top: 265px;
+  left:300px;
   height: 50px;
   width: 500px;
   -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -218,7 +232,7 @@ box-sizing: border-box;
 }
 
 .multipleChoice {
-/*Style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 
   width : 220px;
   height : 60px;
@@ -250,4 +264,20 @@ box-sizing: border-box;
 
 #multipleChoiceAnswers {
   padding-top: 290px;
+}
+
+#winStatePlayer1 {
+
+  height: 300px;
+  width: 600px;
+
+  position: absolute;
+  top: 180px;
+  left:360px;
+  border: 1px solid gold;
+  border-radius: 25px;
+  font-size: 46px;
+  background-color:#ffffff;
+
+
 }

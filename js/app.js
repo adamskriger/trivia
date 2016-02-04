@@ -1,9 +1,13 @@
 $( document ).ready(function() {
   console.log("ready!")
 
-  $("#answerContainer").hide();
 
-var counter = 2;
+//These are hidden divs that appear only when called
+  $("#answerContainer").hide();
+  $("#winStatePlayer1").hide();
+
+
+var counter = 3;
 var player1Score = 0;
 var player2Score = 0;
 
@@ -152,8 +156,26 @@ $("#choice1").on("click", function() {
     console.log("This is player2 score: " + player2Score);
     console.log("This is player2 myturn: " + player2.myTurn);
     console.log("This is the counter: " + counter);
+  }
+
+
+  //This describes and sets the win states:
+  if (player1Score > 2) {
+    console.log("Player1 Wins");
+    $('#winStatePlayer1').html("Player 1 Wins");
+    $('#winStatePlayer1').show();
 
   }
+
+  if (player2Score > 2) {
+    console.log("Player1 Wins");
+    $('#winStatePlayer1').html("Player 2 Wins");
+    $('#winStatePlayer1').show();
+
+  }
+
+  //end win states//
+
   // setPlayerTurn();
   $("#answerContainer").show();
   //Display scores:
@@ -190,6 +212,24 @@ $("#choice2").on("click", function() {
     console.log("This is the counter: " + counter);
 
   }
+
+  //This describes and sets the win states:
+  if (player1Score > 2) {
+    console.log("Player1 Wins");
+    $('#winStatePlayer1').html("Player 1 Wins");
+    $('#winStatePlayer1').show();
+
+  }
+
+  if (player2Score > 2) {
+    console.log("Player1 Wins");
+    $('#winStatePlayer1').html("Player 2 Wins");
+    $('#winStatePlayer1').show();
+
+  }
+
+  //end win states//
+
   // setPlayerTurn();
   $("#answerContainer").show();
   //Display scores:
@@ -224,6 +264,26 @@ $("#choice3").on("click", function() {
     console.log("This is the counter: " + counter);
 
   }
+
+
+
+  //This describes and sets the win states:
+  if (player1Score > 2) {
+    console.log("Player1 Wins");
+    $('#winStatePlayer1').html("Player 1 Wins");
+    $('#winStatePlayer1').show();
+
+  }
+
+  if (player2Score > 2) {
+    console.log("Player1 Wins");
+    $('#winStatePlayer1').html("Player 2 Wins");
+    $('#winStatePlayer1').show();
+
+  }
+
+  //end win states//
+
   // setPlayerTurn();
   $("#answerContainer").show();
   //Display scores:
