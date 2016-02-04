@@ -134,6 +134,7 @@ setPlayerTurn();
 });
 
 //Clicking on #choice 1
+
 $("#choice1").on("click", function() {
   console.log(player1.myTurn);
   console.log(player2.myTurn);
@@ -158,8 +159,23 @@ $("#choice1").on("click", function() {
     console.log("This is the counter: " + counter);
   }
 
+//this is the code that increments the counter when a wrong answer choice is clicked upon:
+  else if ($('#choice1').html() !== $('#answerContainer').html() && player2.myTurn === true)
+  {
+  
+    counter++;
+    setPlayerTurn();
+  }
+
+  else if ($('#choice1').html() !== $('#answerContainer').html() && player1.myTurn === true)
+  {
+    counter++;
+    setPlayerTurn();
+  }
+ //end of code that increments the counter when a wrong answer choice is clicked upon:
 
   //This describes and sets the win states:
+
   if (player1Score > 2) {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 1 Wins");
@@ -213,6 +229,20 @@ $("#choice2").on("click", function() {
 
   }
 
+  //this is the code that increments the counter when a wrong answer choice is clicked upon:
+    else if ($('#choice2').html() !== $('#answerContainer').html() && player2.myTurn === true)
+    {
+      counter++;
+      setPlayerTurn();
+    }
+
+    else if ($('#choice2').html() !== $('#answerContainer').html() && player1.myTurn === true)
+    {
+      counter++;
+      setPlayerTurn();
+    }
+   //end of code that increments the counter when a wrong answer choice is clicked upon:
+
   //This describes and sets the win states:
   if (player1Score > 2) {
     console.log("Player1 Wins");
@@ -264,6 +294,20 @@ $("#choice3").on("click", function() {
     console.log("This is the counter: " + counter);
 
   }
+
+  //this is the code that increments the counter when a wrong answer choice is clicked upon:
+    else if ($('#choice1').html() !== $('#answerContainer').html() && player2.myTurn === true)
+    {
+      counter++;
+      setPlayerTurn();
+    }
+
+    else if ($('#choice1').html() !== $('#answerContainer').html() && player1.myTurn === true)
+    {
+      counter++;
+      setPlayerTurn();
+    }
+   //end of code that increments the counter when a wrong answer choice is clicked upon:
 
 
 

@@ -262,6 +262,15 @@ box-sizing: border-box;
 
 }
 
+
+.multipleChoice:hover {
+  background: #DAA520;
+  color: black;
+
+}
+
+
+
 #multipleChoiceAnswers {
   padding-top: 290px;
 }
