@@ -12,13 +12,14 @@ var counter = 3;
 var player1Score = 0;
 var player2Score = 0;
 
-function Question(question, answer, incorrectAnswer1, incorrectAnswer2) {
+function Question(question, answer, incorrectAnswer1, incorrectAnswer2, difficultyLevel) {
 
   this.question = question;
   this.answer = answer;
   this.played = false;
   this.incorrectAnswer1 = incorrectAnswer1;
   this.incorrectAnswer2 = incorrectAnswer2;
+  this.difficultyLevel = difficultyLevel;
 
 
   this.display = function(){
@@ -31,6 +32,7 @@ function Question(question, answer, incorrectAnswer1, incorrectAnswer2) {
 }
 
 
+
 //The shuffle function is based on Fisher-Yates algorithm. Thanks F-Y!
 
 shuffle = function(o){
@@ -40,11 +42,11 @@ shuffle = function(o){
 
 //creates instances of questions
 
-var question1 = new Question('How old was Steve Jobs when he founded Apple?','20 years old', '25 years old', '32 years old');
-var question2 = new Question('How long did it take for Facebook to turn a profit?','5 years', '3 years', 'FB is still not profitable');
-var question3 = new Question('In what city was General Assembly founded?','New York City', 'San Francisco', 'Chicago');
-var question4 = new Question('How many monthly users does Instragram have?','300 million', '150,000', 'Who uses Instagram?');
-var question5 = new Question('What does I.P.O. stand for?','Initial Public Offering', 'Internet Pursuing Others', 'Instant Price Offering');
+var question1 = new Question('How old was Steve Jobs when he founded Apple?','20 years old', '25 years old', '32 years old', 1);
+var question2 = new Question('How long did it take for Facebook to turn a profit?','5 years', '3 years', 'FB is still not profitable', 1);
+var question3 = new Question('In what city was General Assembly founded?','New York City', 'San Francisco', 'Chicago', 1);
+var question4 = new Question('How many monthly users does Instragram have?','300 million', '150,000', 'Who uses Instagram?', 1);
+var question5 = new Question('What does I.P.O. stand for?','Initial Public Offering', 'Internet Pursuing Others', 'Instant Price Offering', 1);
 
 
 //create constructor function to create player objects
@@ -437,6 +439,10 @@ function reset() {
 displayCurrentPlayer();
 
 }
+
+
+
+
 
   //end of document.ready function//
 });
