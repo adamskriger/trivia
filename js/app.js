@@ -39,10 +39,10 @@ shuffle = function(o){
 
 //creates instances of questions
 
-var question1 = new Question('How old was Steve Jobs when he founded Apple Computer?','20 years old', '25 years old', '32 years old');
+var question1 = new Question('How old was Steve Jobs when he founded Apple?','20 years old', '25 years old', '32 years old');
 var question2 = new Question('How long did it take for Facebook to turn a profit?','5 years', '3 years', 'FB is still not profitable');
 var question3 = new Question('In what city was General Assembly founded?','New York City', 'San Francisco', 'Chicago');
-var question4 = new Question('How many active monthy users does Instragram have?','300 million', '150,000', 'Who uses Instagram?');
+var question4 = new Question('How many monthly users does Instragram have?','300 million', '150,000', 'Who uses Instagram?');
 var question5 = new Question('What does I.P.O. stand for?','Initial Public Offering', 'Internet Pursuing Others', 'Instant Price Offering');
 
 
@@ -136,6 +136,10 @@ setPlayerTurn();
 //Clicking on #choice 1
 
 $("#choice1").on("click", function() {
+
+
+
+
   console.log(player1.myTurn);
   console.log(player2.myTurn);
 
@@ -162,13 +166,14 @@ $("#choice1").on("click", function() {
 //this is the code that increments the counter when a wrong answer choice is clicked upon:
   else if ($('#choice1').html() !== $('#answerContainer').html() && player2.myTurn === true)
   {
-  
+
     counter++;
     setPlayerTurn();
   }
 
   else if ($('#choice1').html() !== $('#answerContainer').html() && player1.myTurn === true)
   {
+    choiceId = window.setInterval(shake,200);
     counter++;
     setPlayerTurn();
   }
@@ -353,8 +358,6 @@ console.log(currentPlayer)
 $('#currentPlayer').html("Current Player: " + currentPlayer);
 
 }
-
-
 
 
   //end of document.ready function//

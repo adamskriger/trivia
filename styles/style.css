@@ -16,7 +16,7 @@ body {
 
 #h1 {
 
-  font-size: 66px;
+  font-size: 88px;
 
 }
 
@@ -90,11 +90,12 @@ box-sizing: border-box;
 /* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #questionContainer {
   position: absolute;
-  left:420px;
+  left:400px;
   text-align: left;
   vertical-align: middle;
   height: 150px;
   width: 500px;
+  line-height: 150px;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
 	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
@@ -231,11 +232,28 @@ box-sizing: border-box;
 
 }
 
+/*#askQuestionButton {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+#askQuestionButton {
+    animation-name: shake;
+}*/
+
 .multipleChoice {
 /* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 
   width : 220px;
   height : 60px;
+  vertical-align: middle;
+  line-height: 60px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -290,3 +308,9 @@ box-sizing: border-box;
 
 
 }
+
+.toggle {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
