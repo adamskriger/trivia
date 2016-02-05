@@ -32,7 +32,6 @@ function Question(question, answer, incorrectAnswer1, incorrectAnswer2, difficul
 }
 
 
-
 //The shuffle function is based on Fisher-Yates algorithm. Thanks F-Y!
 
 shuffle = function(o){
@@ -62,13 +61,6 @@ function Person(firstName) {
 var player1 = new Person();
 var player2 = new Person();
 
-  // function Person(first, last, age, eye) {
-  //     this.firstName = first;
-  //     this.lastName = last;
-  //     this.age = age;
-  //     this.eyeColor = eye;
-  // }
-
 
 //Assign player turn
 function setPlayerTurn() {
@@ -85,43 +77,16 @@ function setPlayerTurn() {
 setPlayerTurn();
 
 
-//Allow user to select  an answer choice
-//make an event handler for each one of the boxes
+var ArrayOfQuestions = [question1, question2, question3, question4, question5 ];
 
-
-
-//Compare user's selected option to correct answerContainer
-
-
-
-//assign points to player if answer is correct
-
-
-
-  // $( "#askQuestionButton" ).click(function() {
-  //   console.log( "Handler for .click() called." );
-  // });
-
-
-  var ArrayOfQuestions = [question1, question2, question3, question4, question5 ];
-
-  $( "#askQuestionButton" ).on( "click", function() {
+$( "#askQuestionButton" ).on( "click", function() {
     shuffle(ArrayOfQuestions);
     for (var i=0; i < ArrayOfQuestions.length; i++) {
+
     $('#questionContainer').html(ArrayOfQuestions[i].question); //this puts the question into the div with id questionContainer
 
     $("#answerContainer").hide();
-
     $('#answerContainer').html(ArrayOfQuestions[i].answer);
-
-
-
-    //if player score decrements by one, move back one space in the array.
-    //if player score increments by one, move forward two spaces in the array
-    //if player score < 5, draw from easy difficulty array
-    // if player score > 5, draw from medoium difficulty array
-    // if player score >10 draw from hard difficulty array 
-
 
 
 
@@ -136,50 +101,41 @@ setPlayerTurn();
 
 }
 
-
-
   incorrectAnswersShuffler(ArrayOfQuestions[i].question, ArrayOfQuestions[i].answer, ArrayOfQuestions[i].incorrectAnswer1, ArrayOfQuestions[i].incorrectAnswer2);
 
 }
 
-$("#multipleChoiceAnswers").show();
+  $("#multipleChoiceAnswers").show();
 
 
-//end of event handler click on ask question button
+//end of event handler / click on ask question button
 });
 
-//Clicking on #choice 1
-$("#choice1").on("click", function() {
+var choice1 = $('#choice1');
+var choice2 = $('#choice2');
+var choice3 = $('#choice3');
 
-  console.log(player1.myTurn);
-  console.log(player2.myTurn);
 
-  if ($('#choice1').html() === $('#answerContainer').html() && player1.myTurn === true) {
+
+//This function goes within the click event and is the main function of the game
+function within(aChoice) {
+  if (aChoice.html() === $('#answerContainer').html() && player1.myTurn === true) {
     player1Score++;
     counter++;
     setPlayerTurn();
     $("#answerContainer").show();
-
-    console.log("This is player1Score " + player1Score);
-    console.log("This is player2Score " + player2Score);
-    console.log("This is player1 myturn: " + player1.myTurn);
-    console.log("This is the counter: " + counter);
   }
 
-  else if ($('#choice1').html() === $('#answerContainer').html() && player2.myTurn === true) {
+  else if (aChoice.html() === $('#answerContainer').html() && player2.myTurn === true) {
     player2Score++;
     counter++;
     setPlayerTurn();
     $("#answerContainer").show();
 
-    console.log("This is player1 score: " + player1Score);
-    console.log("This is player2 score: " + player2Score);
-    console.log("This is player2 myturn: " + player2.myTurn);
-    console.log("This is the counter: " + counter);
   }
 
 //this is the code that increments the counter when a wrong answer choice is clicked upon:
-  else if ($('#choice1').html() !== $('#answerContainer').html() && player2.myTurn === true)
+  else if (aChoice.html() !== $('#answerContainer').html() && player2.myTurn === true)
   {
 
     counter++;
@@ -188,23 +144,22 @@ $("#choice1").on("click", function() {
 
   }
 
-  else if ($('#choice1').html() !== $('#answerContainer').html() && player1.myTurn === true)
+  else if (aChoice.html() !== $('#answerContainer').html() && player1.myTurn === true)
   {
     counter++;
     setPlayerTurn();
     $("#answerContainer").show();
 
   }
- //end of code that increments the counter when a wrong answer choice is clicked upon:
+  //end of code that increments the counter when a wrong answer choice is clicked upon:
 
-  //This describes and sets the win states:
+  //The following describes and sets the win states:
 
   if (player1Score > 2) {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 1 Wins");
     $('#winStatePlayer1').show();
     hideAll();
-
 
   }
 
@@ -214,184 +169,45 @@ $("#choice1").on("click", function() {
     $('#winStatePlayer1').show();
     hideAll();
 
-
   }
 
   //end win states//
-
-  // setPlayerTurn();
-  // $("#answerContainer").show();
   $("#multipleChoiceAnswers").hide();
   //Display scores:
   $('#player1Score').html("Player 1 Score: " + player1Score);
   $('#player2Score').html("Player 2 Score: " + player2Score);
   displayCurrentPlayer();
 
+}
 
+// clicking on choice 1:
+// choice1.on("click", theHandler);
+//
+// function theHandler(evt) {
+//
+// within(choice1);
+//
+// };
+
+$("#choice1").on("click", function() {
+
+  within(choice1);
 
 });
 
-//Clicking on #choice 2
+
+//Clicking on #choice 2:
 $("#choice2").on("click", function() {
-  console.log(player1.myTurn);
-  console.log(player2.myTurn);
 
-  if ($('#choice2').html() === $('#answerContainer').html() && player1.myTurn === true) {
-    player1Score++;
-    counter++;
-    setPlayerTurn();
-    $("#answerContainer").show();
-
-    console.log("This is player1Score " + player1Score);
-    console.log("This is player2Score " + player2Score);
-    console.log("This is player1 myturn: " + player1.myTurn);
-    console.log("This is the counter: " + counter);
-  }
-
-  else if ($('#choice2').html() === $('#answerContainer').html() && player2.myTurn === true) {
-    player2Score++;
-    counter++;
-    setPlayerTurn();
-    $("#answerContainer").show();
-
-    console.log("This is player1 score: " + player1Score);
-    console.log("This is player2 score: " + player2Score);
-    console.log("This is player2 myturn: " + player2.myTurn);
-    console.log("This is the counter: " + counter);
-
-  }
-
-  //this is the code that increments the counter when a wrong answer choice is clicked upon:
-    else if ($('#choice2').html() !== $('#answerContainer').html() && player2.myTurn === true)
-    {
-      counter++;
-      setPlayerTurn();
-      $("#answerContainer").show();
-
-    }
-
-    else if ($('#choice2').html() !== $('#answerContainer').html() && player1.myTurn === true)
-    {
-      counter++;
-      setPlayerTurn();
-      $("#answerContainer").show();
-
-    }
-   //end of code that increments the counter when a wrong answer choice is clicked upon:
-
-  //This describes and sets the win states:
-  if (player1Score > 2) {
-    console.log("Player1 Wins");
-    $('#winStatePlayer1').html("Player 1 Wins");
-    $('#winStatePlayer1').show();
-    hideAll();
-
-
-  }
-
-  if (player2Score > 2) {
-    console.log("Player1 Wins");
-    $('#winStatePlayer1').html("Player 2 Wins");
-    $('#winStatePlayer1').show();
-    hideAll();
-
-
-
-  }
-
-  //end win states//
-
-  // setPlayerTurn();
-  // $("#answerContainer").show();
-  $("#multipleChoiceAnswers").hide();
-
-  //Display scores:
-  $('#player1Score').html("Player 1 Score: " + player1Score);
-  $('#player2Score').html("Player 2 Score: " + player2Score);
-  displayCurrentPlayer();
-
+  within(choice2);
 
 });
-//Clicking on #choice 3
+
+
+//Clicking on #choice 3:
 $("#choice3").on("click", function() {
-  console.log(player1.myTurn);
-  console.log(player2.myTurn);
 
-  if ($('#choice3').html() === $('#answerContainer').html() && player1.myTurn === true) {
-    player1Score++;
-    counter++;
-    setPlayerTurn();
-    $("#answerContainer").show();
-
-    console.log("This is player1Score " + player1Score);
-    console.log("This is player2Score " + player2Score);
-    console.log("This is player1 myturn: " + player1.myTurn);
-    console.log("This is the counter: " + counter);
-  }
-
-  else if ($('#choice3').html() === $('#answerContainer').html() && player2.myTurn === true) {
-    player2Score++;
-    counter++;
-    setPlayerTurn();
-    $("#answerContainer").show();
-
-    console.log("This is player1 score: " + player1Score);
-    console.log("This is player2 score: " + player2Score);
-    console.log("This is player2 myturn: " + player2.myTurn);
-    console.log("This is the counter: " + counter);
-
-  }
-
-  //this is the code that increments the counter when a wrong answer choice is clicked upon:
-    else if ($('#choice3').html() !== $('#answerContainer').html() && player2.myTurn === true)
-    {
-      counter++;
-      setPlayerTurn();
-      $("#answerContainer").show();
-
-    }
-
-    else if ($('#choice3').html() !== $('#answerContainer').html() && player1.myTurn === true)
-    {
-      counter++;
-      setPlayerTurn();
-      $("#answerContainer").show();
-
-    }
-   //end of code that increments the counter when a wrong answer choice is clicked upon:
-
-
-
-  //This describes and sets the win states:
-  if (player1Score > 2) {
-    console.log("Player1 Wins");
-    $('#winStatePlayer1').html("Player 1 Wins");
-    $('#winStatePlayer1').show();
-    hideAll();
-
-
-  }
-
-  if (player2Score > 2) {
-    console.log("Player1 Wins");
-    $('#winStatePlayer1').html("Player 2 Wins");
-    $('#winStatePlayer1').show();
-    hideAll();
-
-
-  }
-
-  //end win states//
-
-  // setPlayerTurn();
-  // $("#answerContainer").show();
-  $("#multipleChoiceAnswers").hide();
-
-  //Display scores:
-  $('#player1Score').html("Player 1 Score: " + player1Score);
-  $('#player2Score').html("Player 2 Score: " + player2Score);
-  displayCurrentPlayer();
-
+  within(choice3);
 
 });
 
@@ -449,35 +265,6 @@ function reset() {
 displayCurrentPlayer();
 
 }
-
-/////////////////////////////SandBox////////////////////////////////////
-
-
-var easyQuestions = [];
-
-var mediumQuestions = [];
-
-var hardQuestions = [];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   //end of document.ready function//
