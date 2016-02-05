@@ -1,6 +1,16 @@
 $( document ).ready(function() {
   console.log("ready!")
 
+  // Following functions sourced from http://stackoverflow.com/questions/12390626/how-to-move-to-prev-next-element-of-an-array
+
+
+  Array.prototype.next = function() {
+      return this[++this.current];
+  };
+  Array.prototype.prev = function() {
+      return this[--this.current];
+  };
+  Array.prototype.current = 0;
 
 //These are hidden divs that appear only when called
   $("#answerContainer").hide();
@@ -8,7 +18,7 @@ $( document ).ready(function() {
   $("#reset").hide();
 
 
-var counter = 3;
+var counter = 0;
 var player1Score = 0;
 var player2Score = 0;
 
@@ -34,18 +44,19 @@ function Question(question, answer, incorrectAnswer1, incorrectAnswer2, difficul
 
 //The shuffle function is based on Fisher-Yates algorithm. Thanks F-Y!
 
-shuffle = function(o){
-	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-	return o;
-};
+
 
 //creates instances of questions
 
-var question1 = new Question('How old was Steve Jobs when he founded Apple?','20 years old', '25 years old', '32 years old', 1);
-var question2 = new Question('How long did it take for Facebook to turn a profit?','5 years', '3 years', 'FB is still not profitable', 1);
-var question3 = new Question('In what city was General Assembly founded?','New York City', 'San Francisco', 'Chicago', 1);
-var question4 = new Question('How many monthly users does Instragram have?','300 million', '150,000', 'Who uses Instagram?', 1);
-var question5 = new Question('What does I.P.O. stand for?','Initial Public Offering', 'Internet Pursuing Others', 'Instant Price Offering', 1);
+var question1 = new Question('rank1','20 years old', '25 years old', '32 years old', 1);
+var question2 = new Question('rank2','5 years', '3 years', 'FB is still not profitable', 1);
+var question3 = new Question('rank3?','New York City', 'San Francisco', 'Chicago', 1);
+var question4 = new Question('rank4?','300 million', '150,000', 'Who uses Instagram?', 1);
+var question5 = new Question('rank5?','Initial Public Offering', 'Internet Pursuing Others', 'Instant Price Offering', 1);
+var question6 = new Question('rank6','20 years old', '25 years old', '32 years old', 1);
+var question7 = new Question('rank7','5 years', '3 years', 'FB is still not profitable', 1);
+var question8 = new Question('rank8?','New York City', 'San Francisco', 'Chicago', 1);
+var question9 = new Question('rank9?','300 million', '150,000', 'Who uses Instagram?', 1);
 
 
 //create constructor function to create player objects
@@ -77,43 +88,38 @@ function setPlayerTurn() {
 setPlayerTurn();
 
 
-var ArrayOfQuestions = [question1, question2, question3, question4, question5 ];
+var orderedQuestions = [question1, question2, question3, question4, question5, question6, question7, question8, question9 ];
+
+
 
 $( "#askQuestionButton" ).on( "click", function() {
-    shuffle(ArrayOfQuestions);
-    for (var i=0; i < ArrayOfQuestions.length; i++) {
 
-    $('#questionContainer').html(ArrayOfQuestions[i].question); //this puts the question into the div with id questionContainer
 
-    $("#answerContainer").hide();
-    $('#answerContainer').html(ArrayOfQuestions[i].answer);
+      $('#questionContainer').html(orderedQuestions.next().question);
 
 
 
-  //The following function shuffles the answer choices and places them in an array:
-  function incorrectAnswersShuffler(question, answer, incorrectAnswer1, incorrectAnswer2) {
-    var incorrectAnswersArray = [answer, incorrectAnswer1, incorrectAnswer2];
-    shuffle(incorrectAnswersArray);
-    //now we have to place the shuffled answers into the divs that contain the mc answer choices:
-    $('#choice1').html(incorrectAnswersArray[0]);
-    $('#choice2').html(incorrectAnswersArray[1]);
-    $('#choice3').html(incorrectAnswersArray[2]);
 
-}
+      var choice1 = $('#choice1');
+      var choice2 = $('#choice2');
+      var choice3 = $('#choice3');
 
-  incorrectAnswersShuffler(ArrayOfQuestions[i].question, ArrayOfQuestions[i].answer, ArrayOfQuestions[i].incorrectAnswer1, ArrayOfQuestions[i].incorrectAnswer2);
+    $('#choice1').html(orderedQuestions.next().answer);
+    $('#choice2').html(orderedQuestions.next().answer);
+    $('#choice3').html(orderedQuestions.next().answer);
 
-}
+
+  // incorrectAnswersShuffler(ArrayOfQuestions[i].question, ArrayOfQuestions[i].answer, ArrayOfQuestions[i].incorrectAnswer1, ArrayOfQuestions[i].incorrectAnswer2);
+
+
 
   $("#multipleChoiceAnswers").show();
+
 
 
 //end of event handler / click on ask question button
 });
 
-var choice1 = $('#choice1');
-var choice2 = $('#choice2');
-var choice3 = $('#choice3');
 
 
 
@@ -172,7 +178,7 @@ function within(aChoice) {
   }
 
   //end win states//
-  $("#multipleChoiceAnswers").hide();
+  // $("#multipleChoiceAnswers").hide();
   //Display scores:
   $('#player1Score').html("Player 1 Score: " + player1Score);
   $('#player2Score').html("Player 2 Score: " + player2Score);
@@ -269,3 +275,25 @@ displayCurrentPlayer();
 
   //end of document.ready function//
 });
+
+
+//
+//
+// var orderedQuestions = [rank1, rank2, rank3, rank4, rank5, rank6, rank7, rank8, rank9];
+//
+// var previousScore
+// var newScore;
+// var currentArrayPosition
+// var newArrayPosition =  ArrayOfQuestions[i+2].question
+//
+//
+// if (previous score > newScore) {
+//
+//   $('#questionContainer').html(newArrayPosition); //this puts the question into the div with id questionContainer
+//
+//
+// }
+
+
+
+//Add the next and previous functions to the array prototype
