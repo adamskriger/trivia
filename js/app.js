@@ -155,7 +155,7 @@ function within(aChoice) {
 
   //The following describes and sets the win states:
 
-  if (player1Score > 0) {
+  if (player1Score > 1) {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 1 Wins");
     $('#winStatePlayer1').show();
@@ -163,7 +163,7 @@ function within(aChoice) {
 
   }
 
-  if (player2Score > 0) {
+  if (player2Score > 1) {
     console.log("Player2 Wins");
     $('#winStatePlayer1').html("Player 2 Wins");
     $('#winStatePlayer1').show();
