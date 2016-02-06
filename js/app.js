@@ -155,7 +155,7 @@ function within(aChoice) {
 
   //The following describes and sets the win states:
 
-  if (player1Score > 2) {
+  if (player1Score > 1) {
     console.log("Player1 Wins");
     $('#winStatePlayer1').html("Player 1 Wins");
     $('#winStatePlayer1').show();
@@ -163,8 +163,8 @@ function within(aChoice) {
 
   }
 
-  if (player2Score > 2) {
-    console.log("Player1 Wins");
+  if (player2Score > 1) {
+    console.log("Player2 Wins");
     $('#winStatePlayer1').html("Player 2 Wins");
     $('#winStatePlayer1').show();
     hideAll();
@@ -239,14 +239,6 @@ function hideAll(){
 }
 
 
-
-$("#resetButton").on("click", function(){
-
-  reset();
-
-})
-
-
 function reset() {
   player1Score = 0;
   player2Score = 0;
@@ -260,11 +252,17 @@ function reset() {
   $("#askQuestionButton").show();
   $("#talkShowHost").show();
   $("#reset").hide();
-  $("#resetButton").hide();
+  // $("#resetButton").hide();
 
 displayCurrentPlayer();
 
 }
+
+$("#resetButton").on("click", function(){
+
+  reset();
+
+})
 
 
   //end of document.ready function//
