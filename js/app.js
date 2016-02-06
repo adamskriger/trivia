@@ -1,7 +1,7 @@
 $( document ).ready(function() {
   console.log("ready!")
 
-
+//Begin Document//
 //These are hidden divs that appear only when called
   $("#answerContainer").hide();
   $("#winStatePlayer1").hide();
