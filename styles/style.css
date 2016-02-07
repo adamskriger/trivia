@@ -40,8 +40,8 @@ body {
 #talkShowHost {
 
 position: absolute;
-top:180px;
-left: 930px;
+top:190px;
+left: 900px;
 z-index: 1;
 -webkit-transition: all 2s ease;
 
@@ -114,7 +114,7 @@ box-sizing: border-box;
 /* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #questionContainer {
   position: absolute;
-  left:400px;
+  left:350px;
   top:100px;
   text-align: center;
   vertical-align: middle;
@@ -200,7 +200,7 @@ box-sizing: border-box;
 #answerContainer {
   position: absolute;
   top: 325px;
-  left:415px;
+  left:361px;
   height: 50px;
   width: 500px;
   vertical-align: middle;
