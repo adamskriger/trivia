@@ -32,7 +32,12 @@ position: absolute;
 top:180px;
 left: 930px;
 z-index: 1;
+-webkit-transition: all 2s ease;
 
+}
+
+#talkShowHost:hover {
+-webkit-transform: scale(1.1);
 
 }
 
@@ -85,8 +90,13 @@ box-sizing: border-box;
   background-image:url('/Users/Adam1/fundamentals/trivia/media/scoreboard.png');
   background-repeat: no-repeat;;
   background-size: contain;
-
+  -webkit-transition: all .5s ease; 
 }
+
+#playerScores:hover {
+  -webkit-transform: scale(1.2)
+}
+
 
 /* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #questionContainer {
@@ -109,9 +119,13 @@ box-sizing: border-box;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
   padding-left: 15px;
-
+  -webkit-transition: all 2s ease
 }
 
+#questionContainer:hover {
+  -webkit-transform: scale(1.07);
+
+}
 
 
 /*#withinQuestionContainer {
@@ -132,9 +146,16 @@ box-sizing: border-box;
 	display:inline-block;
 	color:#666666;
 	font-family:Arial;
-\	font-weight:bold;
+	font-weight:bold;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
+  -webkit-transition: all .5s ease;
+
+}
+
+#player1Score:hover {
+
+  -webkit-transform: scale(1.1)
 }
 
 /* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
@@ -154,6 +175,11 @@ box-sizing: border-box;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
 
+}
+
+#player2Score:hover {
+
+  -webkit-transform: scale(1.1)
 }
 
 /* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
@@ -199,8 +225,12 @@ box-sizing: border-box;
   background-repeat: round;
   background-size: auto;
   border-color: transparent;
+  -webkit-transition: all .5s ease;
+  z-index: 1;
+}
 
-
+#askQuestionButton:hover {
+  -webkit-transform: scale(1.1)
 }
 
 The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-css-keyframes/
@@ -239,6 +269,7 @@ The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-
   background-repeat: round;
   background-size: 170px x 500px;
 
+
 }
 
 #choice2 {
@@ -271,14 +302,14 @@ The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-
 	font-weight:bold;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
-
+  -webkit-transition: all 1.5s ease;
 
 }
 
 
 .multipleChoice:hover {
-  background: #98dafc;
   color: black;
+  transform:scale(1.1)
 
 }
 
