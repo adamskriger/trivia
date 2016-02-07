@@ -107,7 +107,7 @@ $( "#askQuestionButton" ).on( "click", function() {
 
   $("#multipleChoiceAnswers").show();
 
-
+  $(this).toggleClass("animated");
 //end of event handler / click on ask question button
 });
 
