@@ -251,6 +251,8 @@ function reset() {
   $("#questionContainer").show();
   $("#askQuestionButton").show();
   $("#talkShowHost").show();
+  $("#multipleChoiceAnswers").show();
+
   $("#reset").hide();
   // $("#resetButton").hide();
 
