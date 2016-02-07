@@ -1,28 +1,12 @@
-/** {
-  border-color: black;
-  border-width: 1px;
-  border-style: dotted;
-  border-radius: 25px;
 
 }*/
 /*cartoon images courtesy of Shutterstock*/
 
 
-
-/*font-family: 'Cinzel', serif;
-
-font-family: 'Kaushan Script', cursive;
-
-font-family: 'Comfortaa', cursive;
-
-font-family: 'Lobster', cursive;*/
-
 body {
 
-  /*background-image: url("http://www.studio-camera-lucida.com/wp-content/uploads/2013/12/spotlight_Background_101.jpg");
-  background-repeat: no-repeat;*/
 
-  background-image:url('/Users/Adam1/fundamentals/trivia/media/pink_background.png');
+  background-image:url('/trivia/media/pink_background.png');
   background-repeat: no-repeat;;
   background-size: cover;
 
@@ -100,7 +84,7 @@ box-sizing: border-box;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
 
-  background-image:url('/Users/Adam1/fundamentals/trivia/media/scoreboard.png');
+  background-image:url('/trivia/media/scoreboard.png');
   background-repeat: no-repeat;;
   background-size: contain;
   -webkit-transition: all .5s ease;
@@ -118,7 +102,7 @@ box-sizing: border-box;
   top:100px;
   text-align: center;
   vertical-align: middle;
-  background-image:url('/Users/Adam1/fundamentals/trivia/media/prompter.png');
+  background-image:url('/trivia/media/prompter.png');
   background-repeat: round;
   background-size: 170px x 500px;
   height: 350px;
@@ -235,7 +219,7 @@ box-sizing: border-box;
   margin: auto;
   border-radius: 10px;
   background-color: transparent;
-  background-image:url('/Users/Adam1/fundamentals/trivia/media/questionButton.png');
+  background-image:url('/trivia/media/questionButton.png');
   background-repeat: round;
   background-size: auto;
   border-color: transparent;
@@ -275,11 +259,9 @@ The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-
 
 
 #choice1 {
-  /*background-image: url("http://www.clker.com/cliparts/x/u/B/A/8/Z/white-background-gold-button-hi.png");
-  background-repeat: no-repeat;
-  background-size: 220px 60px;*/
 
-  background-image:url('/Users/Adam1/fundamentals/trivia/media/cartoon button.png');
+
+  background-image:url('/trivia/media/cartoon button.png');
   background-repeat: round;
   background-size: 170px x 500px;
 
@@ -287,13 +269,13 @@ The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-
 }
 
 #choice2 {
-  background-image:url('/Users/Adam1/fundamentals/trivia/media/cartoon button.png');
+  background-image:url('/trivia/media/cartoon button.png');
   background-repeat: round;
   background-size: 170px x 500px;
   }
 
 #choice3 {
-  background-image:url('/Users/Adam1/fundamentals/trivia/media/cartoon button.png');
+  background-image:url('/trivia/media/cartoon button.png');
   background-repeat: round;
   background-size: 170px x 500px;
     }
@@ -375,7 +357,7 @@ The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-
 }
 
 #resetButton{
-  background-image:url('/Users/Adam1/fundamentals/trivia/media/cartoon button.png');
+  background-image:url('/trivia/media/cartoon button.png');
   background-repeat: round;
   background-size: 220px x 160px;
 
@@ -385,7 +367,7 @@ The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-
   font-weight:bold;
   text-decoration:none;
   text-shadow:0px 1px 0px #ffffff;
-  
+
   border-radius: 26px;
   height: 60px;
   width: 220px;
