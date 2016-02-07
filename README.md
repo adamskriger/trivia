@@ -1,4 +1,4 @@
-# trivia
+# The Information Station
 
 This is a two-player trivia game. Players compete to see who can answer the greatest number of questions correctly.
 
