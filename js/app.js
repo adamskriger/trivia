@@ -7,7 +7,6 @@ $( document ).ready(function() {
   $("#winStatePlayer1").hide();
   $("#reset").hide();
 
-
 var counter = 3;
 var player1Score = 0;
 var player2Score = 0;
