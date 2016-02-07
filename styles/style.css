@@ -255,7 +255,7 @@ The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-
 }
 
 .animated {
-    animation: pulse 15s infinite alternate;
+    animation: pulse 2s infinite alternate;
 }
 
 
