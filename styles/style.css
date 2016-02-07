@@ -239,7 +239,7 @@ The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-
 
 @-webkit-keyframes pulse {
     0% { -webkit-transform: scale(1); }
-    50% { -webkit-transform: scale(1.5); }
+    50% { -webkit-transform: scale(1.15); }
     100% { -webkit-transform: scale(1); }
 }
 
@@ -250,8 +250,8 @@ The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-
 }
 
 .pulse {
-    -webkit-animation: pulse 10s infinite alternate;
-    animation: pulse pulse 10s infinite alternate;
+    -webkit-animation: pulse 2s infinite alternate;
+    animation: pulse pulse 2s infinite alternate;
 }
 
 .animated {
