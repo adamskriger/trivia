@@ -36,6 +36,43 @@ body {
 }
 
 
+#player1spaceship {
+
+position: absolute;
+height: 150px;
+width: 100px;
+top:390px;
+left: 20px;
+z-index: 1;
+-webkit-transition: all 2s ease;
+
+}
+
+#player1spaceship:hover {
+-webkit-transform: scale(1.1);
+
+}
+
+
+
+#player2spaceship {
+
+position: absolute;
+height: 150px;
+width: 100px;
+top:390px;
+left: 130px;
+z-index: 1;
+-webkit-transition: all 2s ease;
+
+}
+
+#player2spaceship:hover {
+-webkit-transform: scale(1.1);
+
+}
+
+
 
 #talkShowHost {
 
