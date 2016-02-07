@@ -6,6 +6,17 @@
 
 }*/
 /*cartoon images courtesy of Shutterstock*/
+
+
+
+/*font-family: 'Cinzel', serif;
+
+font-family: 'Kaushan Script', cursive;
+
+font-family: 'Comfortaa', cursive;
+
+font-family: 'Lobster', cursive;*/
+
 body {
 
   /*background-image: url("http://www.studio-camera-lucida.com/wp-content/uploads/2013/12/spotlight_Background_101.jpg");
@@ -52,10 +63,12 @@ box-sizing: border-box;
 }
 
 #headline {
+  font-family: 'Audiowide', cursive;
+
   text-align: center;
   margin: auto;
   color: #98dafc;
-  font-size: 26px;
+  font-size: 23px;
 
 }
 
@@ -90,7 +103,7 @@ box-sizing: border-box;
   background-image:url('/Users/Adam1/fundamentals/trivia/media/scoreboard.png');
   background-repeat: no-repeat;;
   background-size: contain;
-  -webkit-transition: all .5s ease; 
+  -webkit-transition: all .5s ease;
 }
 
 #playerScores:hover {

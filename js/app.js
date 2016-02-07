@@ -172,7 +172,7 @@ function within(aChoice) {
   }
 
   //end win states//
-  $("#multipleChoiceAnswers").slideUp('slow');
+  $("#multipleChoiceAnswers").fadeOut('slow');
   //Display scores:
   $('#player1Score').html("Player 1 Score: " + player1Score);
   $('#player2Score').html("Player 2 Score: " + player2Score);
