@@ -1,13 +1,13 @@
 
-}*/
+
 /*cartoon images courtesy of Shutterstock*/
 
 
-body {
+#body {
 
 
-  background-image:url('/trivia/media/pink_background.png');
-  background-color: pink;
+  background-image:url("/trivia/media/pink_background.png");
+  background-color: #fa5b5a;
   background-repeat: no-repeat;
   background-size:  auto;
   background-attachment: fixed;
