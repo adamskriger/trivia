@@ -6,23 +6,30 @@
     <meta charset="utf-8">
 
 
-    <title>Trivia</title>
+    <title>Information Station</title>
 
 
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/normalize.css">
 
+    <link href='https://fonts.googleapis.com/css?family=Lobster|Comfortaa|Kaushan+Script|Cinzel|Audiowide' rel='stylesheet' type='text/css'>
     <script src= "js/jquery-2.2.0.min.js"></script>
+
     <script src="js/app.js"></script>
 
   </head>
 
 
-
+<!-- The photo of the  talk show host is sourced from the indicated website. All credit due to the original creator -->
   <body>
+    <div id="talkShowHost">
+      <img height="450px" width="200px" src="/Users/Adam1/fundamentals/trivia/media/host_right.png"/>
+
+    </div>
     <container id= container>
 <div id="headline">
-  <h1>Trivia</h1>
+  <h1 id="title">The Information Station</h1>
+
 </div>
 
       <div id="gameBoard">
@@ -41,34 +48,58 @@ Player 2 Score:
 <div id="questionContainer">
 
 
-This is where the question will go.
+  First to answer five questions wins!
 
-</div>
+
+</div id = answerContainerContainer>
 
 <div id="answerContainer">
-This is where the correct answer will flash up and appear
+  Click the Ask Question Button to Play!
 </div>
 
 
 
-<button id= "askQuestionButton" type="button" >Ask Question</button>
+<button id= "askQuestionButton" class = "bounce" type="button" >Ask Question</button>
 
 <div id="multipleChoiceAnswers">
-  <div id="choice1" class= "multipleChoice">
-Multiple Choice Answer 1
-  </div>
+  <div id="choice1" class= "multipleChoice" "toggle">
+Are  </div>
   <div id="choice2" class= "multipleChoice">
-    Multiple Choice Answer 2
+
+  You
 
   </div>
   <div id="choice3" class= "multipleChoice">
-    Multiple Choice Answer 3
+
+  Ready?
 
   </div>
 
 </div>
+
+
+<div id="winStatePlayer1">
+
+  Player 1 wins
+
+</div>
+
+
+<div id="reset">
+    <button id= "resetButton" type="button" name="button">Play Again</button>
+</div>
+
+
+<!-- <img id= "player1spaceship"  src="/Users/Adam1/fundamentals/trivia/media/lightbluerocketfire.png" />
+
+<img id= "player2spaceship"  src="/Users/Adam1/fundamentals/trivia/media/player2spaceship.png" /> -->
+
+
 <!-- //end of gameBoard // -->
       </div>
+
+
+
 
 
     </container>

@@ -1,17 +1,24 @@
 $( document ).ready(function() {
   console.log("ready!")
 
-var counter = 2;
+//Begin Document//
+//These are hidden divs that appear only when called
+  $("#answerContainer").hide();
+  $("#winStatePlayer1").hide();
+  $("#reset").hide();
+
+var counter = 3;
 var player1Score = 0;
 var player2Score = 0;
 
-function Question(question, answer, incorrectAnswer1, incorrectAnswer2) {
+function Question(question, answer, incorrectAnswer1, incorrectAnswer2, difficultyLevel) {
 
   this.question = question;
   this.answer = answer;
   this.played = false;
   this.incorrectAnswer1 = incorrectAnswer1;
   this.incorrectAnswer2 = incorrectAnswer2;
+  this.difficultyLevel = difficultyLevel;
 
 
   this.display = function(){
@@ -33,11 +40,11 @@ shuffle = function(o){
 
 //creates instances of questions
 
-var question1 = new Question('What is a question?','That was question', 'incorrectAnswer1', 'incorrectAnswer2');
-var question2 = new Question('What is a dog?','That was a dog', 'incorrectAnswer1', 'incorrectAnswer2');
-var question3 = new Question('What is a cat?','That was a cat', 'incorrectAnswer1', 'incorrectAnswer2');
-var question4 = new Question('What is a horse?','That was a horse', 'incorrectAnswer1', 'incorrectAnswer2');
-var question5 = new Question('What is a monkey?','That was a monkey', 'incorrectAnswer1', 'incorrectAnswer2');
+var question1 = new Question('How old was Steve Jobs when he founded Apple?','20 years old', '25 years old', '32 years old', 1);
+var question2 = new Question('How long did it take for Facebook to turn a profit?','5 years', '3 years', 'FB is still not profitable', 1);
+var question3 = new Question('In what city was General Assembly founded?','New York City', 'San Francisco', 'Chicago', 1);
+var question4 = new Question('How many monthly users does Instragram have?','300 million', '150,000', 'Who uses Instagram?', 1);
+var question5 = new Question('What does I.P.O. stand for?','Initial Public Offering', 'Internet Pursuing Others', 'Instant Price Offering', 1);
 
 
 //create constructor function to create player objects
@@ -52,13 +59,6 @@ function Person(firstName) {
 //create instances of people who will be playing
 var player1 = new Person();
 var player2 = new Person();
-
-  // function Person(first, last, age, eye) {
-  //     this.firstName = first;
-  //     this.lastName = last;
-  //     this.age = age;
-  //     this.eyeColor = eye;
-  // }
 
 
 //Assign player turn
@@ -76,32 +76,17 @@ function setPlayerTurn() {
 setPlayerTurn();
 
 
-//Allow user to select  an answer choice
-//make an event handler for each one of the boxes
+var ArrayOfQuestions = [question1, question2, question3, question4, question5 ];
 
-
-
-//Compare user's selected option to correct answerContainer
-
-
-
-//assign points to player if answer is correct
-
-
-
-  //this puts the question into the div with id questionContainer
-  // $( "#askQuestionButton" ).click(function() {
-  //   console.log( "Handler for .click() called." );
-  // });
-
-
-  var ArrayOfQuestions = [question1, question2, question3, question4, question5 ];
-
-  $( "#askQuestionButton" ).on( "click", function() {
+$( "#askQuestionButton" ).on( "click", function() {
     shuffle(ArrayOfQuestions);
     for (var i=0; i < ArrayOfQuestions.length; i++) {
-    $('#questionContainer').html(ArrayOfQuestions[i].question);
+
+    $('#questionContainer').html(ArrayOfQuestions[i].question); //this puts the question into the div with id questionContainer
+
+    $("#answerContainer").hide();
     $('#answerContainer').html(ArrayOfQuestions[i].answer);
+
 
 
   //The following function shuffles the answer choices and places them in an array:
@@ -115,116 +100,113 @@ setPlayerTurn();
 
 }
 
-
-
   incorrectAnswersShuffler(ArrayOfQuestions[i].question, ArrayOfQuestions[i].answer, ArrayOfQuestions[i].incorrectAnswer1, ArrayOfQuestions[i].incorrectAnswer2);
 
 }
 
+  $("#multipleChoiceAnswers").show();
 
-//end of event handler click on ask question button
+  $(this).toggleClass("animated");
+//end of event handler / click on ask question button
 });
 
-//Clicking on #choice 1
+var choice1 = $('#choice1');
+var choice2 = $('#choice2');
+var choice3 = $('#choice3');
+
+
+
+//This function goes within the click event and is the main function of the game
+function within(aChoice) {
+  if (aChoice.html() === $('#answerContainer').html() && player1.myTurn === true) {
+    player1Score++;
+    counter++;
+    setPlayerTurn();
+    $("#answerContainer").show();
+  }
+
+  else if (aChoice.html() === $('#answerContainer').html() && player2.myTurn === true) {
+    player2Score++;
+    counter++;
+    setPlayerTurn();
+    $("#answerContainer").show();
+
+  }
+
+//this is the code that increments the counter when a wrong answer choice is clicked upon:
+  else if (aChoice.html() !== $('#answerContainer').html() && player2.myTurn === true)
+  {
+
+    counter++;
+    setPlayerTurn();
+    $("#answerContainer").show();
+
+  }
+
+  else if (aChoice.html() !== $('#answerContainer').html() && player1.myTurn === true)
+  {
+    counter++;
+    setPlayerTurn();
+    $("#answerContainer").show();
+
+  }
+  //end of code that increments the counter when a wrong answer choice is clicked upon:
+
+  //The following describes and sets the win states:
+
+  if (player1Score > 1) {
+    console.log("Player1 Wins");
+    $('#winStatePlayer1').html("Player 1 Wins");
+    $('#winStatePlayer1').show();
+    hideAll();
+
+  }
+
+  if (player2Score > 1) {
+    console.log("Player2 Wins");
+    $('#winStatePlayer1').html("Player 2 Wins");
+    $('#winStatePlayer1').show();
+    hideAll();
+
+  }
+
+  //end win states//
+  $("#multipleChoiceAnswers").fadeOut('slow');
+  //Display scores:
+  $('#player1Score').html("Player 1 Score: " + player1Score);
+  $('#player2Score').html("Player 2 Score: " + player2Score);
+  displayCurrentPlayer();
+
+}
+
+// clicking on choice 1:
+// choice1.on("click", theHandler);
+//
+// function theHandler(evt) {
+//
+// within(choice1);
+//
+// };
+
 $("#choice1").on("click", function() {
-  console.log(player1.myTurn);
-  console.log(player2.myTurn);
 
-  if ($('#choice1').html() === $('#answerContainer').html() && player1.myTurn === true) {
-    player1Score++;
-    counter++;
-    setPlayerTurn();
-    console.log("This is player1Score " + player1Score);
-    console.log("This is player2Score " + player2Score);
-    console.log("This is player1 myturn: " + player1.myTurn);
-    console.log("This is the counter: " + counter);
-  }
-
-  else if ($('#choice1').html() === $('#answerContainer').html() && player2.myTurn === true) {
-    player2Score++;
-    counter++;
-    setPlayerTurn();
-    console.log("This is player1 score: " + player1Score);
-    console.log("This is player2 score: " + player2Score);
-    console.log("This is player2 myturn: " + player2.myTurn);
-    console.log("This is the counter: " + counter);
-
-  }
-  // setPlayerTurn();
-
-  //Display scores:
-  $('#player1Score').html("Player 1 Score: " + player1Score);
-  $('#player2Score').html("Player 2 Score: " + player2Score);
-  displayCurrentPlayer();
+  within(choice1);
 
 });
 
-//Clicking on #choice 2
+
+//Clicking on #choice 2:
 $("#choice2").on("click", function() {
-  console.log(player1.myTurn);
-  console.log(player2.myTurn);
 
-  if ($('#choice2').html() === $('#answerContainer').html() && player1.myTurn === true) {
-    player1Score++;
-    counter++;
-    setPlayerTurn();
-    console.log("This is player1Score " + player1Score);
-    console.log("This is player2Score " + player2Score);
-    console.log("This is player1 myturn: " + player1.myTurn);
-    console.log("This is the counter: " + counter);
-  }
-
-  else if ($('#choice2').html() === $('#answerContainer').html() && player2.myTurn === true) {
-    player2Score++;
-    counter++;
-    setPlayerTurn();
-    console.log("This is player1 score: " + player1Score);
-    console.log("This is player2 score: " + player2Score);
-    console.log("This is player2 myturn: " + player2.myTurn);
-    console.log("This is the counter: " + counter);
-
-  }
-  // setPlayerTurn();
-
-  //Display scores:
-  $('#player1Score').html("Player 1 Score: " + player1Score);
-  $('#player2Score').html("Player 2 Score: " + player2Score);
-  displayCurrentPlayer();
-
+  within(choice2);
 
 });
-//Clicking on #choice 3
+
+
+//Clicking on #choice 3:
 $("#choice3").on("click", function() {
-  console.log(player1.myTurn);
-  console.log(player2.myTurn);
 
-  if ($('#choice3').html() === $('#answerContainer').html() && player1.myTurn === true) {
-    player1Score++;
-    counter++;
-    setPlayerTurn();
-    console.log("This is player1Score " + player1Score);
-    console.log("This is player2Score " + player2Score);
-    console.log("This is player1 myturn: " + player1.myTurn);
-    console.log("This is the counter: " + counter);
-  }
-
-  else if ($('#choice3').html() === $('#answerContainer').html() && player2.myTurn === true) {
-    player2Score++;
-    counter++;
-    setPlayerTurn();
-    console.log("This is player1 score: " + player1Score);
-    console.log("This is player2 score: " + player2Score);
-    console.log("This is player2 myturn: " + player2.myTurn);
-    console.log("This is the counter: " + counter);
-
-  }
-  // setPlayerTurn();
-
-  //Display scores:
-  $('#player1Score').html("Player 1 Score: " + player1Score);
-  $('#player2Score').html("Player 2 Score: " + player2Score);
-  displayCurrentPlayer();
-
+  within(choice3);
 
 });
 
@@ -244,7 +226,44 @@ $('#currentPlayer').html("Current Player: " + currentPlayer);
 
 }
 
+function hideAll(){
+  $("#playerScores").hide();
+  $("#questionContainer").hide();
+  $("#askQuestionButton").hide();
+  $("#talkShowHost").hide();
+  $("#answerContainerContainer").hide();
+  $("#answerContainer").hide();
+  $("#reset").show();
 
+}
+
+
+function reset() {
+  player1Score = 0;
+  player2Score = 0;
+  counter = 3;
+  $('#player1Score').html("Player 1 Score: " + player1Score);
+  $('#player2Score').html("Player 2 Score: " + player2Score);
+
+  $('#winStatePlayer1').hide();
+  $("#playerScores").show();
+  $("#questionContainer").show();
+  $("#askQuestionButton").show();
+  $("#talkShowHost").show();
+  $("#multipleChoiceAnswers").show();
+
+  $("#reset").hide();
+  // $("#resetButton").hide();
+
+displayCurrentPlayer();
+
+}
+
+$("#resetButton").on("click", function(){
+
+  reset();
+
+})
 
 
   //end of document.ready function//

@@ -1,14 +1,54 @@
-* {
+/** {
   border-color: black;
   border-width: 1px;
   border-style: dotted;
+  border-radius: 25px;
 
-}
+}*/
+/*cartoon images courtesy of Shutterstock*/
+
+
+
+/*font-family: 'Cinzel', serif;
+
+font-family: 'Kaushan Script', cursive;
+
+font-family: 'Comfortaa', cursive;
+
+font-family: 'Lobster', cursive;*/
 
 body {
 
-  background-image: url("http://www.studio-camera-lucida.com/wp-content/uploads/2013/12/spotlight_Background_101.jpg");
-  background-repeat: no-repeat;
+  /*background-image: url("http://www.studio-camera-lucida.com/wp-content/uploads/2013/12/spotlight_Background_101.jpg");
+  background-repeat: no-repeat;*/
+
+  background-image:url('/Users/Adam1/fundamentals/trivia/media/pink_background.png');
+  background-repeat: no-repeat;;
+  background-size: cover;
+
+}
+
+
+#h1 {
+
+  font-size: 88px;
+
+}
+
+
+
+#talkShowHost {
+
+position: absolute;
+top:190px;
+left: 900px;
+z-index: 1;
+-webkit-transition: all 2s ease;
+
+}
+
+#talkShowHost:hover {
+-webkit-transform: scale(1.1);
 
 }
 
@@ -23,64 +63,338 @@ box-sizing: border-box;
 }
 
 #headline {
+  font-family: 'Audiowide', cursive;
+
   text-align: center;
   margin: auto;
   color: #98dafc;
+  font-size: 23px;
 
 }
 
 #gameBoard {
+
   text-align: center;
   margin: auto;
-  background-color: #89bdd3;
+  background-color: none
   width: 900px;
   height: 500px;
 }
 
 
-#questionContainer {
-  background-color: #9ad3de
-  color: black;
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
+#playerScores {
+  position: absolute;
+  left:80px;
+  width: 250px;
+  height: 245px;
   text-align: center;
-  height: 150px;
+
+  padding-top: 25px;
+	border-radius:6px;
+	display:inline-block;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+
+  background-image:url('/Users/Adam1/fundamentals/trivia/media/scoreboard.png');
+  background-repeat: no-repeat;;
+  background-size: contain;
+  -webkit-transition: all .5s ease;
+}
+
+#playerScores:hover {
+  -webkit-transform: scale(1.2)
+}
+
+
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
+#questionContainer {
+  position: absolute;
+  left:350px;
+  top:100px;
+  text-align: center;
+  vertical-align: middle;
+  background-image:url('/Users/Adam1/fundamentals/trivia/media/prompter.png');
+  background-repeat: round;
+  background-size: 170px x 500px;
+  height: 350px;
+  width: 500px;
+  line-height: 150px;
+	display: inline-block;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-transition: all 2s ease
+}
+
+#questionContainer:hover {
+  -webkit-transform: scale(1.07);
 
 }
 
 
+/*#withinQuestionContainer {
+  height:400px;
+  padding-top: 40px;
+}*/
+
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #player1Score {
-
-  height: auto;
+  font-size: 20px;
+  margin-top: 10px;
+  height: 35px;
   width:  auto;
+	background-color:none;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	display:inline-block;
+	color:#666666;
+	font-family:Arial;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  -webkit-transition: all .5s ease;
+
 }
 
+#player1Score:hover {
+
+  -webkit-transform: scale(1.1)
+}
+
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #player2Score {
-
-  height: auto;
+  font-size: 20px;
+  height: 35px;
   width:  auto;
+	background-color: none;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:none;
+	display:inline-block;
+	color:#666666;
+	font-family:Arial;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
 
 }
 
+#player2Score:hover {
+
+  -webkit-transform: scale(1.1)
+}
+
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
 #answerContainer {
-  color: white;
-  background-color: #e3e3e3;
-  height: 150px;
+  position: absolute;
+  top: 325px;
+  left:361px;
+  height: 50px;
+  width: 500px;
+  vertical-align: middle;
+  line-height: 50px;
+	background-color: none;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:none;
+	display:inline-block;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+
+
 
 }
 
 
 #askQuestionButton {
-  height:50px;
-  width: 150px;
-  padding:5px;
-  background-color: white;
-  color: #89bdd3;
+  position: absolute;
+  top: 45px;
+  left: 930px;
+  height:70px;
+  width: 236px;
+  color: #00BFFF;
+  font-weight: bold;
   text-decoration:none;
   margin: auto;
+  border-radius: 10px;
+  background-color: transparent;
+  background-image:url('/Users/Adam1/fundamentals/trivia/media/questionButton.png');
+  background-repeat: round;
+  background-size: auto;
+  border-color: transparent;
+  -webkit-transition: all .5s ease;
+  z-index: 1;
 }
 
-.multipleChoice {
+#askQuestionButton:hover {
+  -webkit-transform: scale(1.1)
+}
 
-  width : 250px;
-  height : 120px;
-  display: inline-block;
+The pulse animation is courtesy of http://webdesignerhut.com/5-animations-using-css-keyframes/
+
+
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.5); }
+    100% { -webkit-transform: scale(1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    -webkit-animation: pulse 10s infinite alternate;
+    animation: pulse pulse 10s infinite alternate;
+}
+
+.animated {
+    animation: pulse 15s infinite alternate;
+}
+
+
+
+
+#choice1 {
+  /*background-image: url("http://www.clker.com/cliparts/x/u/B/A/8/Z/white-background-gold-button-hi.png");
+  background-repeat: no-repeat;
+  background-size: 220px 60px;*/
+
+  background-image:url('/Users/Adam1/fundamentals/trivia/media/cartoon button.png');
+  background-repeat: round;
+  background-size: 170px x 500px;
+
+
+}
+
+#choice2 {
+  background-image:url('/Users/Adam1/fundamentals/trivia/media/cartoon button.png');
+  background-repeat: round;
+  background-size: 170px x 500px;
+  }
+
+#choice3 {
+  background-image:url('/Users/Adam1/fundamentals/trivia/media/cartoon button.png');
+  background-repeat: round;
+  background-size: 170px x 500px;
+    }
+
+.multipleChoice {
+/* Button style courtesy of http://www.bestcssbuttongenerator.com/#/23*/
+
+  width : 220px;
+  height : 60px;
+
+  vertical-align: middle;
+  line-height: 60px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	display:inline-block;
+	color:black;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  -webkit-transition: all 1.5s ease;
+
+}
+
+
+.multipleChoice:hover {
+  color: black;
+  transform:scale(1.1)
+
+}
+
+
+
+#multipleChoiceAnswers {
+  padding-top: 390px;
+
+}
+
+#winStatePlayer1 {
+
+  height: 265px;
+  width: 396px;
+
+  position: absolute;
+  top: 180px;
+  left:420px;
+  border: 1px solid gold;
+  border-radius: 25px;
+  font-size: 46px;
+  background-color:#ffffff;
+  background-image: url("https://s3.amazonaws.com/keyme-blog/2015/05/05_success.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+
+}
+
+.toggle {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
+
+#reset {
+  position:absolute;
+  height: 100px;
+  width: 220px;
+  left: 515px;
+  top:450px;
+  z-index: 1;
+  padding: none;
+  background-color: transparent;
+  border-radius: 26px;
+  border: none;
+
+
+}
+
+#resetButton{
+  background-image:url('/Users/Adam1/fundamentals/trivia/media/cartoon button.png');
+  background-repeat: round;
+  background-size: 220px x 160px;
+
+  color:black;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffffff;
+  
+  border-radius: 26px;
+  height: 60px;
+  width: 220px;
+  background-color: transparent;
+  color: black;
+  margin: none;
+  padding: none;
+  vertical-align: middle;
+  line-height: 60px;
+  border: none;
+
 }
