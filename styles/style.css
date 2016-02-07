@@ -9,7 +9,7 @@ body {
   background-image:url('/trivia/media/pink_background.png');
   background-color: #fa5b5a;
   background-repeat: no-repeat;;
-  background-size: cover;
+  background-size:  auto;
   width: 960px;
   height:960px;
 }
